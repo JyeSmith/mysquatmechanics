@@ -1,1014 +1,1077 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://blockchain.info/Resources/js/pay-now-button.js"></script>
-    <meta name="generator"
-    content="squat deadlift mechanics model modelling" />
-    <!-- Basic Page Needs
+
+<head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://blockchain.info/Resources/js/pay-now-button.js"></script>
+	<meta name="generator" content="squat deadlift mechanics model modelling" />
+	<!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta charset="utf-8" />
-    <title>MySquatMechanics</title>
-    <meta name="just some guy" content="" />
-    <!-- Mobile Specific Metas
+	<meta charset="utf-8" />
+	<title>MySquatMechanics</title>
+	<meta name="just some guy" content="" />
+	<!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- FONT
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" /> 
-    <!-- CSS
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
+	<!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<!-- https://fortawesome.github.io/Font-Awesome/get-started/ -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/skeleton.css" />
-    <!-- Favicon
+
+	<link rel="stylesheet" href="/css/normalize.css" />
+	<link rel="stylesheet" href="/css/skeleton.css" />
+	<!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
-	  
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+
 	<!-- Plotly.js -->
 	<script async src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-		
-	    <style>
-		ul.share-buttons{
-		  list-style: none;
-		  padding: 0;
+
+	<style>
+		ul.share-buttons {
+			list-style: none;
+			padding: 0;
 		}
 
-		ul.share-buttons li{
-		  display: inline;
+		ul.share-buttons li {
+			display: inline;
 		}
 
-		ul.share-buttons img{
-		  width: 32px;
+		ul.share-buttons img {
+			width: 32px;
 		}
+
 		#ad img {
 			margin-bottom: 50px;
 			max-width: 100%;
 			height: auto;
 		}
-		</style>
-  </head>
+	</style>
+</head>
 
-  <body onload="update()">
-    <!-- Primary Page Layout
+<body onload="update()">
+	<!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="container">
-	
-      <div class="row">	  
-        <div class="nine columns">
-          <h1>MySquatMechanics.com</h1>
-        </div>		
-        <div class="three columns">
-			<ul class="share-buttons"> 
-			  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.mysquatmechanics.com%2F&t=My%20Squat%20Mechanics" title="Share on Facebook" target="_blank"><img src="https://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
-			  <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fwww.mysquatmechanics.com%2F&text=My%20Squat%20Mechanics:%20http%3A%2F%2Fwww.mysquatmechanics.com%2F" target="_blank" title="Tweet"><img src="https://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
-			  <li><a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.mysquatmechanics.com%2F" target="_blank" title="Share on Google+"><img src="https://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
-			  <li><a href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.mysquatmechanics.com%2F&title=My%20Squat%20Mechanics" target="_blank" title="Submit to Reddit"><img src="https://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Reddit.svg"></a></li>
-			</ul>
-        </div>		
-      </div>
-	  
-      <div class="row">
-        <div class="three columns">
-			<h5> <a href="/" style="text-decoration: none; color : #000" >MySquatMechanics</a> </h5>
-        </div>
-        <div class="three columns">
-			<h5> <a href="/bench/" style="text-decoration: none; color : #000" >MyBenchMechanics</a> </h5>
-        </div>
-        <div class="three columns">
-			<h5> <a href="/deadlift/" style="text-decoration: none; color : #000" >MyDeadliftMechanics</a> </h5>
-        </div>		
-      </div>
-	  
-      <div class="row">
-        <div class="twelve columns">
-          <p>
-			  MySquatMechanics.com aims to help you understand the stickman squat model presented in a number of articles on squatting form.  <a href="#info">If this is the first time coming accross this model skip ahead for more information and helpful links.</a>		
-		  </p>
-          <p>
-		  The below sliders allows you to enter your own body's dimensions and identify areas such as your bodies squating angles, potential form issues and where your sticking position is located.  Use it to see how the moment changes for your body when varying the bar position from low to high bar... or just play around with the sliders and make funny looking people squat.
-		  </p>
-          <p>
-			  Just remember that below is a <i>model</i>!  The results shown are correct for the <i>model</i> and may not be right for you.  
-		  </p>
-        </div>
-      </div>	  
-	  	  
-      <div class="row">
-        <div class="one-half column">
-          <div class="row">
-            <div class="one-third column">
-              <b>Foot</b>
-            </div>
-            <div class="one-third column">
-              <input type="range" id="footslider" min="5" max="40" value="20" step="1" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">
-            <span id="footvalue">25 cm (9.8") cm</span></div>
-          </div>
-          <div class="row">
-            <div class="one-third column">
-              <b>Tibia</b>
-            </div>
-            <div class="one-third column">
-              <input type="range" id="tibiaslider" min="10" max="80" value="50" step="1" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">
-            <span id="tibiavalue">50 cm (19.7")</span></div>
-          </div>
-          <div class="row">
-            <div class="one-third column">
-              <b>Femur</b>
-            </div>
-            <div class="one-third column">
-              <input type="range" id="femurslider" min="10" max="80" value="50" step="1" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">
-            <span id="femurvalue">50 cm (19.7")</span></div>
-          </div>
-          <div class="row">
-            <div class="one-third column">
-              <b>Torso</b>
-            </div>
-            <div class="one-third column">
-              <input type="range" id="torsoslider" min="30" max="120" value="55" step="1" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">
-            <span id="torsovalue">55 cm (21.7")</span></div>
-          </div>
-		  
-          <div class="row">
-            <div class="one-third column">
-              <b>High -> Low Bar</b>
-            </div>
-            <div class="one-third column">
-              <input type="range" id="highlowslider" min="0" max="30" value="0" step="1" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">
-            <span id="highlowslidervalue">0 cm (0")</span></div>
-          </div>
-		  
-          <div class="row">
-            <div class="one-third column">
-              <b>Body Weight</b>
-            </div>
-            <div class="one-third column">
-              <input type="range" id="weightslider" min="30" max="300" value="75" step="1" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">
-            <span id="weightvalue">75 kg (165 lb)</span></div>
-          </div>
-          <div class="row">
-            <div class="one-third column">
-              <b>Bar Weight</b>
-            </div>
-            <div class="one-third column">
-              <input type="range" id="barweightslider" min="20" max="500" value="100" step="5" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">
-            <span id="barweightvalue">100 kg (220 lb)</span></div>
-          </div>
-        </div>
-        <div class="one-half column">
-          <div class="row">
-            <div class="one-third column">
-              <b>Max Ankle Flexion</b>
-            </div>
-            <div class="one-third column">
-              <input type="range" id="ankleflexiontslider" min="0" max="60" value="30" step="1" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">
-            <span id="ankleflexionvalue">30</span> Degrees</div>
-          </div>
-          <div class="row">
-            <div class="one-third column">
-              <b>Depth</b>
-            </div>
-            <div class="one-third column">
-              <input type="range" id="depthslider" min="-50" max="50" value="0" step="1" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">
-            <span id="depthvalue">0</span> Degrees
-            <br /></div>
-          </div>
-          <div class="row">
-            <i>(0 = parallel, -ve = below parallel)</i>
-            <br />
-            <br />
-          </div>
-          <div class="row">
-            <div class="one-third column">
-              <b>Stance Angle</b>
-            </div>
-            <div class="one-third column">
-              <input type="range" id="stanceslider" min="0" max="89" value="20" step="1" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">
-            <span id="stancevalue">20</span> Degrees</div>
-          </div>
-          <div class="row">
-            <b>Squat Position</b>
-          </div>
-          <div class="row">
-            <div class="one-third column">Standing</div>
-            <div class="one-third column">
-              <input type="range" id="positionslider" min="0" max="99" value="0" step="1" oninput="update(this.value)" />
-            </div>
-            <div class="one-third column">Squatting</div>
-          </div>
-        </div>
-      </div>
-	  
-      <div class="row">
-		  <input type="checkbox" id="checkmodel" onchange="update(this.value)" checked="checked" >Show model.
-		  <input type="checkbox" id="checkstats" onchange="update(this.value)" >Show moment and angles.
-		  <input type="checkbox" id="checkmoment" onchange="update(this.value)" >Show moment breakdown.
-		  <input type="checkbox" id="checkmuscle" onchange="update(this.value)" >Show muscle lengths.
-      </div>
+	<div class="container">
 
-      <div class="row">
-        <div class="one-half column" id="model"></div>
-        <div class="one-half column" id="model2"></div>
-      </div>
-      <div class="row">
-        <div class="twelve columns" id="stats"></div>
-      </div>
-      <div class="row">
-        <div class="twelve columns" id="stats2"></div>
-      </div>
-      <div class="row">
-        <div class="one-half column" id="m1"></div>
-        <div class="one-half column" id="m2"></div>
-      </div>
-          <div class="row">
-            <div class="one-half column">
-			
+		<div class="row">
+			<div class="nine columns">
+				<h1>MySquatMechanics.com</h1>
+			</div>
+			<div class="three columns">
+				<ul class="share-buttons">
+					<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.mysquatmechanics.com%2F&t=My%20Squat%20Mechanics"
+							title="Share on Facebook" target="_blank"><img
+								src="https://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Facebook.svg"></a>
+					</li>
+					<li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fwww.mysquatmechanics.com%2F&text=My%20Squat%20Mechanics:%20http%3A%2F%2Fwww.mysquatmechanics.com%2F"
+							target="_blank" title="Tweet"><img
+								src="https://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Twitter.svg"></a>
+					</li>
+					<li><a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.mysquatmechanics.com%2F"
+							target="_blank" title="Share on Google+"><img
+								src="https://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Google+.svg"></a>
+					</li>
+					<li><a href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.mysquatmechanics.com%2F&title=My%20Squat%20Mechanics"
+							target="_blank" title="Submit to Reddit"><img
+								src="https://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Reddit.svg"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="three columns">
+				<h5> <a href="/" style="text-decoration: none; color : #000">MySquatMechanics</a> </h5>
+			</div>
+			<div class="three columns">
+				<h5> <a href="/bench/" style="text-decoration: none; color : #000">MyBenchMechanics</a> </h5>
+			</div>
+			<div class="three columns">
+				<h5> <a href="/deadlift/" style="text-decoration: none; color : #000">MyDeadliftMechanics</a> </h5>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="twelve columns">
+				<p>
+					MySquatMechanics.com aims to help you understand the stickman squat model presented in a number of
+					articles on squatting form. <a href="#info">If this is the first time coming accross this model skip
+						ahead for more information and helpful links.</a>
+				</p>
+				<p>
+					The below sliders allows you to enter your own body's dimensions and identify areas such as your
+					bodies squating angles, potential form issues and where your sticking position is located. Use it to
+					see how the moment changes for your body when varying the bar position from low to high bar... or
+					just play around with the sliders and make funny looking people squat.
+				</p>
+				<p>
+					Just remember that below is a <i>model</i>! The results shown are correct for the <i>model</i> and
+					may not be right for you.
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="one-half column">
+				<div class="row">
+					<div class="one-third column">
+						<b>Foot</b>
+					</div>
+					<div class="one-third column">
+						<input type="range" id="footslider" min="5" max="40" value="20" step="1"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">
+						<span id="footvalue">25 cm (9.8") cm</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="one-third column">
+						<b>Tibia</b>
+					</div>
+					<div class="one-third column">
+						<input type="range" id="tibiaslider" min="10" max="80" value="50" step="1"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">
+						<span id="tibiavalue">50 cm (19.7")</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="one-third column">
+						<b>Femur</b>
+					</div>
+					<div class="one-third column">
+						<input type="range" id="femurslider" min="10" max="80" value="50" step="1"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">
+						<span id="femurvalue">50 cm (19.7")</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="one-third column">
+						<b>Torso</b>
+					</div>
+					<div class="one-third column">
+						<input type="range" id="torsoslider" min="30" max="120" value="55" step="1"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">
+						<span id="torsovalue">55 cm (21.7")</span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="one-third column">
+						<b>High -> Low Bar</b>
+					</div>
+					<div class="one-third column">
+						<input type="range" id="highlowslider" min="0" max="30" value="0" step="1"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">
+						<span id="highlowslidervalue">0 cm (0")</span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="one-third column">
+						<b>Body Weight</b>
+					</div>
+					<div class="one-third column">
+						<input type="range" id="weightslider" min="30" max="300" value="75" step="1"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">
+						<span id="weightvalue">75 kg (165 lb)</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="one-third column">
+						<b>Bar Weight</b>
+					</div>
+					<div class="one-third column">
+						<input type="range" id="barweightslider" min="20" max="500" value="100" step="5"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">
+						<span id="barweightvalue">100 kg (220 lb)</span>
+					</div>
+				</div>
+			</div>
+			<div class="one-half column">
+				<div class="row">
+					<div class="one-third column">
+						<b>Max Ankle Flexion</b>
+					</div>
+					<div class="one-third column">
+						<input type="range" id="ankleflexiontslider" min="0" max="60" value="30" step="1"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">
+						<span id="ankleflexionvalue">30</span> Degrees
+					</div>
+				</div>
+				<div class="row">
+					<div class="one-third column">
+						<b>Depth</b>
+					</div>
+					<div class="one-third column">
+						<input type="range" id="depthslider" min="-50" max="50" value="0" step="1"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">
+						<span id="depthvalue">0</span> Degrees
+						<br />
+					</div>
+				</div>
+				<div class="row">
+					<i>(0 = parallel, -ve = below parallel)</i>
+					<br />
+					<br />
+				</div>
+				<div class="row">
+					<div class="one-third column">
+						<b>Stance Angle</b>
+					</div>
+					<div class="one-third column">
+						<input type="range" id="stanceslider" min="0" max="89" value="20" step="1"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">
+						<span id="stancevalue">20</span> Degrees
+					</div>
+				</div>
+				<div class="row">
+					<b>Squat Position</b>
+				</div>
+				<div class="row">
+					<div class="one-third column">Standing</div>
+					<div class="one-third column">
+						<input type="range" id="positionslider" min="0" max="99" value="0" step="1"
+							oninput="update(this.value)" />
+					</div>
+					<div class="one-third column">Squatting</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<input type="checkbox" id="checkmodel" onchange="update(this.value)" checked="checked">Show model.
+			<input type="checkbox" id="checkstats" onchange="update(this.value)">Show moment and angles.
+			<input type="checkbox" id="checkmoment" onchange="update(this.value)">Show moment breakdown.
+			<input type="checkbox" id="checkmuscle" onchange="update(this.value)">Show muscle lengths.
+		</div>
+
+		<div class="row">
+			<div class="one-half column" id="model"></div>
+			<div class="one-half column" id="model2"></div>
+		</div>
+		<div class="row">
+			<div class="twelve columns" id="stats"></div>
+		</div>
+		<div class="row">
+			<div class="twelve columns" id="stats2"></div>
+		</div>
+		<div class="row">
+			<div class="one-half column" id="m1"></div>
+			<div class="one-half column" id="m2"></div>
+		</div>
+		<div class="row">
+			<div class="one-half column">
+
 				<h3>The Model</h3>
 				<p>
-				 The stickman displays the body part lengths selected above with the sliders, bar path in blue and the current selected squat position.  The squat position is based on the ankle, knee and hips breaking at the same time while the models center of gravity (CoG) is maintained over mid-foot. 
+					The stickman displays the body part lengths selected above with the sliders, bar path in blue and
+					the current selected squat position. The squat position is based on the ankle, knee and hips
+					breaking at the same time while the models center of gravity (CoG) is maintained over mid-foot.
 				</p>
 				<p>
-				The knee flexes linearly while the ankle flexes quicker in the beginning of the squat.  'Linear' meaning that when the model position is 25% of the way from standing to squatting, the knee has flexed 25% from the standing angle to max.  When at the half way position the angle has gone through 50% of its max angle.  Finally at max angle when the model is fully squatting.  Breaking in a linear fashion may not be correct for the knee, nor the ankle flexing faster early in the movement.  Just remember it's a model and won't show exactly how you squat.
+					The knee flexes linearly while the ankle flexes quicker in the beginning of the squat. 'Linear'
+					meaning that when the model position is 25% of the way from standing to squatting, the knee has
+					flexed 25% from the standing angle to max. When at the half way position the angle has gone through
+					50% of its max angle. Finally at max angle when the model is fully squatting. Breaking in a linear
+					fashion may not be correct for the knee, nor the ankle flexing faster early in the movement. Just
+					remember it's a model and won't show exactly how you squat.
 				</p>
 				<p>
-				CoG calculations take into account the bar mass, each body segments mass and each segments own CoG.  This can cause the bar to travel forward past mid-foot to maintain the total models CoG over mid-foot.  As a result the bar does not always travel in a vertical path.
+					CoG calculations take into account the bar mass, each body segments mass and each segments own CoG.
+					This can cause the bar to travel forward past mid-foot to maintain the total models CoG over
+					mid-foot. As a result the bar does not always travel in a vertical path.
 				</p>
-				
+
 				<h3>Stance</h3>
 				<p>
-				Use the stance slider to change the angle of your feet e.g. feet pointing straight ahead equals 0 degrees and straight out equals 90 degrees.
+					Use the stance slider to change the angle of your feet e.g. feet pointing straight ahead equals 0
+					degrees and straight out equals 90 degrees.
 				</p>
 				<p>
-				Those of you with long legs will benefit from a slightly wider stance and feet angled out.  This will make your torso more upright and bring your hips in closer to midfoot.
+					Those of you with long legs will benefit from a slightly wider stance and feet angled out. This will
+					make your torso more upright and bring your hips in closer to midfoot.
 				</p>
-				
+
 			</div>
-            <div class="one-half column">
-			
+			<div class="one-half column">
+
 				<h3>Squat Stats</h3>
 				<p>
-				 The Squat Stats plot displays the moment of the hips and knees along with the angle of the back, hips and knees throughout all positions of the squat.  From squatting on the right to standing on the left.  The vertical line shows the current position of the model and can be changed by sliding the position slider above.
+					The Squat Stats plot displays the moment of the hips and knees along with the angle of the back,
+					hips and knees throughout all positions of the squat. From squatting on the right to standing on the
+					left. The vertical line shows the current position of the model and can be changed by sliding the
+					position slider above.
 				</p>
 				<p>
-				This is useful to see how the moment changes throughout the squat and in identifying the sticking position.
+					This is useful to see how the moment changes throughout the squat and in identifying the sticking
+					position.
 				</p>
-				
+
 				<h3>High -> Low Bar</h3>
 				<p>
-				Move the bar from a high bar position to low bar position.  Distance is from the top of the torso e.g. 0cm for high bar and about 5-10cm for low bar.
+					Move the bar from a high bar position to low bar position. Distance is from the top of the torso
+					e.g. 0cm for high bar and about 5-10cm for low bar.
 				</p>
-				
+
 				<h3>Moment Breakdown</h3>
 				<p>
-				If you have made it this far you probably love numbers and plots!  These 2 show a breakdown of the knee and hip moments and what contributes to them.  The summed moments are a total of the bar moment and the moment from each body segment.   
+					If you have made it this far you probably love numbers and plots! These 2 show a breakdown of the
+					knee and hip moments and what contributes to them. The summed moments are a total of the bar moment
+					and the moment from each body segment.
 				</p>
 				<p>
-				Have a play with the body and bar weight sliders to see how the moment breakdowns change.  You will also see how the bar path changes and starts to move forward with a lighter bar weight.  Midfoot bar path is only possible with a very heavy bar weight and when it dominates the center of gravity calculations.
+					Have a play with the body and bar weight sliders to see how the moment breakdowns change. You will
+					also see how the bar path changes and starts to move forward with a lighter bar weight. Midfoot bar
+					path is only possible with a very heavy bar weight and when it dominates the center of gravity
+					calculations.
 				</p>
-				
+
 				<h3>Muscle Length</h3>
 				<p>
-				Based on the paper by 
-				<a href="https://www.researchgate.net/profile/Maury_Hull/publication/20781812_A_method_for_determining_lower_extremity_muscle-tendon_lengths_during_flexionextension_movements/links/0deec5296a6dbe683f000000.pdf">Hawkins & Hull</a>,  this plot shows the calculated change in length for different muscles during the squat.
+					Based on the paper by
+					<a
+						href="https://www.researchgate.net/profile/Maury_Hull/publication/20781812_A_method_for_determining_lower_extremity_muscle-tendon_lengths_during_flexionextension_movements/links/0deec5296a6dbe683f000000.pdf">Hawkins
+						& Hull</a>, this plot shows the calculated change in length for different muscles during the
+					squat.
 				</p>
-				
+
 			</div>
-        </div>
-		
+		</div>
 
-      <div class="row" id="info">
-        <div class="twelve columns">
-		<h3>Info</h3>
-		If you found MySquatMechanics.com then you more than likely have already researched and read a lot about squating.  If not, below is a bit of reading material to get you started.
-        <br />
-        <br />
-        <a href="https://strengtheory.com/how-to-squat/">
-        <b>How to Squat: The Definitive Guide</b> by Greg Nuckols 03/16/2016</a>
-        <br />		
-        <a href="https://www.strengtheory.com/squat-mechanics-the-red-pill/">
-        <b>Squat Mechanics – The Red Pill</b> by Greg Nuckols 02/23/2015</a>
-        <br />
-        <a href="https://bretcontreras.com/calculating-joint-moments-in-the-squat/">
-        <b>Calculating Joint Moments in the Squat</b> by Andrew Vigotsky 09/21/2015</a>
-        <br />		
-        <a href="https://www.t-nation.com/training/squat-mechanics-a-deep-analysis">
-        <b>Squat Mechanics: A Deep Analysis</b> by Mark Rippetoe 01/15/2015</a>
-        <br />
-        <a href="https://startingstrength.com/articles/squat_rippetoe.pdf">
-        <b>The Squat, or How I Learned to Stop Leg-Pressing and Use My Ass</b> by Mark Rippetoe 2009</a>
-        <br />
-        <a href="https://youtu.be/Av3LO2GwpAk">
-        <b>Squats Part 1: Fold-Ability and Proportions</b> by PersonalTrainingdotcom 2015</a>
-        <br />
-        <a href="https://youtu.be/KGEKRjlZKf8">
-        <b>Squats Part 2: Fold-Ability and Proportions (Examples and Adjustments)</b> by PersonalTrainingdotcom 2015</a>
-        <br />
-		
-        <br />
-        <a href="https://www.exrx.net/Kinesiology/Segments.html">
-        de Leva P, <b>Adjustments to Zatsiorsky-Seluyanov's segment inertia parameters</b>, J Biomech. 1996 Sep;29(9):1223-30.</a>
-        <br />
-        <a href="https://www.researchgate.net/profile/Maury_Hull/publication/20781812_A_method_for_determining_lower_extremity_muscle-tendon_lengths_during_flexionextension_movements/links/0deec5296a6dbe683f000000.pdf">
-        Hawkins D, Hull ML, <b>A method for determining lower extremity muscle-tendon lengths during flexion/extension movements</b>, J Biomech. 1990;23(5):487-94.</a>
-        <br />
-        <a href="https://books.google.com.au/books?id=_bFHL08IWfwC&printsec=frontcover#v=onepage&q&f=false">
-        <b>Biomechanics and Motor Control of Human Movement</b> by David A. Winter, ISBN: 978-0-470-39818-0</a>
-        <br />
 
-        <br />
-        <br /></div>
-      </div>
-	  
-      <div class="row">
-        <hr />
-      </div>
-	  
-      <div class="row">
-        <div class="twelve columns">
-			<div align="center">
-			  contact@mysquatmechanics.com - 2016
+		<div class="row" id="info">
+			<div class="twelve columns">
+				<h3>Info</h3>
+				If you found MySquatMechanics.com then you more than likely have already researched and read a lot about
+				squating. If not, below is a bit of reading material to get you started.
+				<br />
+				<br />
+				<a href="https://strengtheory.com/how-to-squat/">
+					<b>How to Squat: The Definitive Guide</b> by Greg Nuckols 03/16/2016</a>
+				<br />
+				<a href="https://www.strengtheory.com/squat-mechanics-the-red-pill/">
+					<b>Squat Mechanics – The Red Pill</b> by Greg Nuckols 02/23/2015</a>
+				<br />
+				<a href="https://bretcontreras.com/calculating-joint-moments-in-the-squat/">
+					<b>Calculating Joint Moments in the Squat</b> by Andrew Vigotsky 09/21/2015</a>
+				<br />
+				<a href="https://www.t-nation.com/training/squat-mechanics-a-deep-analysis">
+					<b>Squat Mechanics: A Deep Analysis</b> by Mark Rippetoe 01/15/2015</a>
+				<br />
+				<a href="https://startingstrength.com/articles/squat_rippetoe.pdf">
+					<b>The Squat, or How I Learned to Stop Leg-Pressing and Use My Ass</b> by Mark Rippetoe 2009</a>
+				<br />
+				<a href="https://youtu.be/Av3LO2GwpAk">
+					<b>Squats Part 1: Fold-Ability and Proportions</b> by PersonalTrainingdotcom 2015</a>
+				<br />
+				<a href="https://youtu.be/KGEKRjlZKf8">
+					<b>Squats Part 2: Fold-Ability and Proportions (Examples and Adjustments)</b> by
+					PersonalTrainingdotcom 2015</a>
+				<br />
+
+				<br />
+				<a href="https://www.exrx.net/Kinesiology/Segments.html">
+					de Leva P, <b>Adjustments to Zatsiorsky-Seluyanov's segment inertia parameters</b>, J Biomech. 1996
+					Sep;29(9):1223-30.</a>
+				<br />
+				<a
+					href="https://www.researchgate.net/profile/Maury_Hull/publication/20781812_A_method_for_determining_lower_extremity_muscle-tendon_lengths_during_flexionextension_movements/links/0deec5296a6dbe683f000000.pdf">
+					Hawkins D, Hull ML, <b>A method for determining lower extremity muscle-tendon lengths during
+						flexion/extension movements</b>, J Biomech. 1990;23(5):487-94.</a>
+				<br />
+				<a href="https://books.google.com.au/books?id=_bFHL08IWfwC&printsec=frontcover#v=onepage&q&f=false">
+					<b>Biomechanics and Motor Control of Human Movement</b> by David A. Winter, ISBN:
+					978-0-470-39818-0</a>
+				<br />
+
+				<br />
+				<br />
 			</div>
-        </div>
-      </div>
-	  
-    </div>
-	
-<script type="text/javascript">
-function update(newValue)
-{
+		</div>
 
-// If you have made it this far and intend to sort through the code below, please email me any errors you find so it can be updated. 
-// contact@mysquatmechanics.com
+		<div class="row">
+			<hr />
+		</div>
 
-var stanceangle = Number(document.getElementById("stanceslider").value); 
-var stance = Math.cos( stanceangle * Math.PI/180 );
+		<div class="row">
+			<div class="twelve columns">
+				<div align="center">
+					contact@mysquatmechanics.com - 2016
+				</div>
+			</div>
+		</div>
 
-var footoriginal = document.getElementById("footslider").value;
-var foot = stance * document.getElementById("footslider").value;
-var tibia = document.getElementById("tibiaslider").value;
-var femur = document.getElementById("femurslider").value;
-var torso = document.getElementById("torsoslider").value;
-var highlow = document.getElementById("highlowslider").value;
-var weight = document.getElementById("weightslider").value;
-var barweight = document.getElementById("barweightslider").value;
-// Body segments based on torso and tibia input lengths
-// Biomechanics and Motor Control of Human Movement p.83 Fig 4.1
-var necklength = 0.18 * torso; 
-var headdiam = 0.23 * torso;
-var hipwidth = 0.66 * torso / 2;
-var ankleflexion = document.getElementById("ankleflexiontslider").value;
-var depth = document.getElementById("depthslider").value;
-var position = document.getElementById("positionslider").value;
-var plate = 22.5;
+	</div>
 
-document.getElementById("footvalue").innerHTML = footoriginal.concat(" cm (", (footoriginal/2.54).toFixed(1), "\")");
-document.getElementById("tibiavalue").innerHTML = tibia.concat(" cm (", (tibia/2.54).toFixed(1), "\")");
-document.getElementById("femurvalue").innerHTML = femur.concat(" cm (", (femur/2.54).toFixed(1), "\")");
-document.getElementById("torsovalue").innerHTML = torso.concat(" cm (", (torso/2.54).toFixed(1), "\")");
-document.getElementById("highlowslidervalue").innerHTML = highlow.concat(" cm (", (highlow/2.54).toFixed(1), "\")");
+	<script type="text/javascript">
+		function update(newValue) {
 
-document.getElementById("weightvalue").innerHTML = weight.concat(" kg (", (weight*2.2).toFixed(0), " lb)");
-document.getElementById("barweightvalue").innerHTML = barweight.concat(" kg (", (barweight*2.2).toFixed(0), " lb)");
-document.getElementById("stancevalue").innerHTML = document.getElementById("stanceslider").value;
-document.getElementById("ankleflexionvalue").innerHTML = ankleflexion;
-document.getElementById("depthvalue").innerHTML = depth;
+			// If you have made it this far and intend to sort through the code below, please email me any errors you find so it can be updated. 
+			// contact@mysquatmechanics.com
 
-var anklezero = Math.asin((Number(foot)/4)/( Number(tibia) + Number(femur) + Number(torso))) * 180/Math.PI;
-var ankleinc =	(ankleflexion - anklezero) / 99;
+			var stanceangle = Number(document.getElementById("stanceslider").value);
+			var stance = Math.cos(stanceangle * Math.PI / 180);
 
-var kneezero = 90 + anklezero; // Zero angle is from 3 oclock and rotating clockwise
-var kneeinc = (kneezero - depth) / 99;
+			var footoriginal = document.getElementById("footslider").value;
+			var foot = stance * document.getElementById("footslider").value;
+			var tibia = document.getElementById("tibiaslider").value;
+			var femur = document.getElementById("femurslider").value;
+			var torso = document.getElementById("torsoslider").value;
+			var highlow = document.getElementById("highlowslider").value;
+			var weight = document.getElementById("weightslider").value;
+			var barweight = document.getElementById("barweightslider").value;
+			// Body segments based on torso and tibia input lengths
+			// Biomechanics and Motor Control of Human Movement p.83 Fig 4.1
+			var necklength = 0.18 * torso;
+			var headdiam = 0.23 * torso;
+			var hipwidth = 0.66 * torso / 2;
+			var ankleflexion = document.getElementById("ankleflexiontslider").value;
+			var depth = document.getElementById("depthslider").value;
+			var position = document.getElementById("positionslider").value;
+			var plate = 22.5;
 
-var toexyz = [foot/2, 0.2, 0];
-var heelxyz = [-foot/2, 0.2, 0];
-var anklexyz = [-foot/4, 0.16*tibia, 0]; // Biomechanics and Motor Control of Human Movement p.83 Fig 4.1
+			document.getElementById("footvalue").innerHTML = footoriginal.concat(" cm (", (footoriginal / 2.54).toFixed(1), "\")");
+			document.getElementById("tibiavalue").innerHTML = tibia.concat(" cm (", (tibia / 2.54).toFixed(1), "\")");
+			document.getElementById("femurvalue").innerHTML = femur.concat(" cm (", (femur / 2.54).toFixed(1), "\")");
+			document.getElementById("torsovalue").innerHTML = torso.concat(" cm (", (torso / 2.54).toFixed(1), "\")");
+			document.getElementById("highlowslidervalue").innerHTML = highlow.concat(" cm (", (highlow / 2.54).toFixed(1), "\")");
 
-// Segment weight and CoG
-// https://www.exrx.net/Kinesiology/Segments.html
-// de Leva, 1996
-// Average Percentages of Total Body Weight
-var WeightHeadNeck = 0.0681*Number(weight);
-var WeightTrunk = 0.4302*Number(weight);
-var WeightThigh = 2*0.1447*Number(weight);
-var WeightShank = 2*0.0457*Number(weight);
-var WeightArm = 2*(0.0263 + 0.015 + 0.00585)*Number(weight);
+			document.getElementById("weightvalue").innerHTML = weight.concat(" kg (", (weight * 2.2).toFixed(0), " lb)");
+			document.getElementById("barweightvalue").innerHTML = barweight.concat(" kg (", (barweight * 2.2).toFixed(0), " lb)");
+			document.getElementById("stancevalue").innerHTML = document.getElementById("stanceslider").value;
+			document.getElementById("ankleflexionvalue").innerHTML = ankleflexion;
+			document.getElementById("depthvalue").innerHTML = depth;
 
-// Adding arm weight to bar location
-barweight = Number(barweight) + WeightArm;
+			var anklezero = Math.asin((Number(foot) / 4) / (Number(tibia) + Number(femur) + Number(torso))) * 180 / Math.PI;
+			var ankleinc = (ankleflexion - anklezero) / 99;
 
-// % Segment Length (from proximal ends)
-var CoGHeadNeck = 0.4922;
-var CoGTrunk = 0.4046;
-var CoGThigh = 0.3854;
-var CoGShank = 0.4374;
-var totalmoment = 1; // Initialising value for later moment loop calcs.
+			var kneezero = 90 + anklezero; // Zero angle is from 3 oclock and rotating clockwise
+			var kneeinc = (kneezero - depth) / 99;
 
-var positionarray = new Array();
-var anklecurrent = new Array();
-var kneecurrent = new Array();
-var kneex = new Array();
-var kneey = new Array();
-var kneez = new Array();
-var hipx = new Array();
-var hipy = new Array();
-var barx = new Array();
-var bary = new Array();
-var neckx = new Array();
-var necky = new Array();
-var kneemoment = new Array();
-var abskneemoment = new Array();
-var kneemomenthn = new Array();
-var kneemomentb = new Array();
-var kneemomentt = new Array();
-var kneemomentf = new Array();
-var hipmoment = new Array();
-var hipmomenthn = new Array();
-var hipmomentb = new Array();
-var hipmomentt = new Array();
-var summedmoment = new Array();
-var backangle = new Array();
-var hipangle = new Array();
-var kneeangle = new Array();
-var tolen = new Array();
-var flen = new Array();
-var tlen = new Array();
-var ha = new Array();
+			var toexyz = [foot / 2, 0.2, 0];
+			var heelxyz = [-foot / 2, 0.2, 0];
+			var anklexyz = [-foot / 4, 0.16 * tibia, 0]; // Biomechanics and Motor Control of Human Movement p.83 Fig 4.1
 
-// A method for determining lower extremity muscle-tendon lengths during flexion/extension movements
-// Hawkins D, Hull ML.
-// https://www.researchgate.net/profile/Maury_Hull/publication/20781812_A_method_for_determining_lower_extremity_muscle-tendon_lengths_during_flexionextension_movements/links/0deec5296a6dbe683f000000.pdf
-// https://www.researchgate.net/publication/20781812_A_method_for_determining_lower_extremity_muscle-tendon_lengths_during_flexionextension_movements
-// https://www.ncbi.nlm.nih.gov/pubmed/2373721
+			// Segment weight and CoG
+			// https://www.exrx.net/Kinesiology/Segments.html
+			// de Leva, 1996
+			// Average Percentages of Total Body Weight
+			var WeightHeadNeck = 0.0681 * Number(weight);
+			var WeightTrunk = 0.4302 * Number(weight);
+			var WeightThigh = 2 * 0.1447 * Number(weight);
+			var WeightShank = 2 * 0.0457 * Number(weight);
+			var WeightArm = 2 * (0.0263 + 0.015 + 0.00585) * Number(weight);
 
-// Angles convention changed for muscle length equations.
-var AAngle = new Array(); 
-var KAngle = new Array();
-var HAngle = new Array();
-// Muscle arrays
-var Iliopsoas = new Array();
-var TFL = new Array();
-var BicepsFemorisLongHead = new Array();
-var Semimembranosus = new Array();
-var Semitendinosus = new Array();
-var RectusFemoris = new Array();
-var Sartorius = new Array();
-var Gracilis = new Array();
-var BicepsFemorisShortHead = new Array();
-var VastusIntermedius = new Array();
-var VastusLateralis = new Array();
-var VastusMedialis = new Array();
-var MedialGastroc = new Array();
-var LateralGastroc = new Array();
-var TibialisAnterior = new Array();
-var Soleus = new Array();
+			// Adding arm weight to bar location
+			barweight = Number(barweight) + WeightArm;
 
-for (i = 0; i < 100; i++) { 
-	positionarray[i] = i;	
-	
-	// linear ankle breaking model.
-	//anklecurrent[i] = anklezero + i * ankleinc;
-    // LN ankle breaking model. I made this equation up to make the knee break faster early in the squat.
-	// If you have a good reference on how the knee actually breaks please foward it to contact@mysquatmechanics.com
-    anklecurrent[i] = anklezero + (99/Math.log(1 + 99/10)) * Math.log(1 + i/10) * ankleinc;
-	
-	kneecurrent[i] = kneezero - i * kneeinc;	
-	kneex[i] = stance * tibia * Math.sin( anklecurrent[i] * Math.PI/180 ) + anklexyz[0];
-	kneey[i] = tibia * Math.cos( anklecurrent[i] * Math.PI/180 ) + anklexyz[1];
+			// % Segment Length (from proximal ends)
+			var CoGHeadNeck = 0.4922;
+			var CoGTrunk = 0.4046;
+			var CoGThigh = 0.3854;
+			var CoGShank = 0.4374;
+			var totalmoment = 1; // Initialising value for later moment loop calcs.
 
-	hipx[i] = kneex[i] - stance * femur * Math.cos( kneecurrent[i] * Math.PI/180 );
-	hipy[i] = kneey[i] + femur * Math.sin( kneecurrent[i] * Math.PI/180 );
-	if(stance == 1)
-		{
-			kneez[i] = 0;
-	}else{
-		kneez[i] = Math.sqrt( Math.pow(femur,2) - Math.pow(kneex[i]-hipx[i],2) - Math.pow(hipy[i]-kneey[i],2) );
-	}
-	
-	// CoG calcs //////////////////////////////////////////////////////////////////
-	// Looping because it was easier to use brute force than to solve the below equations :)
-	barx[i] = -1;
-	do {
-		barx[i] += 0.1;
-		bary[i] = hipy[i] + Math.sqrt( Math.pow(torso-highlow,2) - Math.pow(barx[i]-hipx[i],2) ); //
-		backangle[i] = (180/Math.PI)*(Math.atan((bary[i]-hipy[i])/(barx[i]-hipx[i])));
-		
-		neckx[i] = barx[i] + highlow * Math.cos( backangle[i] * (Math.PI/180) ); //
-		necky[i] = bary[i] + highlow * Math.sin( backangle[i] * (Math.PI/180) ); //
-		
-		totalmoment = 	  barx[i] * barweight + 
-						( neckx[i]+CoGHeadNeck*Math.cos(backangle[i]*Math.PI/180)*(necklength+headdiam/2) ) * WeightHeadNeck + //
-						( neckx[i]-CoGTrunk*(neckx[i]-hipx[i]) ) * WeightTrunk + //
-						( hipx[i]+CoGThigh*(kneex[i]-hipx[i]) ) * WeightThigh + 
-						( kneex[i]-CoGShank*(kneex[i]-anklexyz[0]) ) * WeightShank;
-	}
-	while ( totalmoment < 0 );
-	
-	// Calc Moments //////////////////////////////////////////////////////////////////
-	if(document.getElementById("checkmoment").checked || document.getElementById("checkstats").checked)
-	{
-		kneemomentb[i] = 9.8 * barweight * (
-						(barx[i]-kneex[i]) 
-						) / (100 * stance);
-		kneemomenthn[i] = ( 9.8 * (
-						( (neckx[i]-kneex[i])+CoGHeadNeck*Math.cos(backangle[i]*Math.PI/180)*(necklength+headdiam/2) ) * WeightHeadNeck //
-						) / (100 * stance) );
-		kneemomentt[i] = ( 9.8 * (
-						( (neckx[i]-kneex[i])-CoGTrunk*(barx[i]-hipx[i]) ) * WeightTrunk
-						) / (100 * stance) );
-		kneemomentf[i] = ( 9.8 * (
-						( (1-CoGThigh)*(hipx[i]-kneex[i]) ) * WeightThigh
-						) / (100 * stance) );
-		kneemoment[i] = kneemomentb[i] + kneemomenthn[i] + kneemomentt[i] + kneemomentf[i];
-						
-		hipmomentb[i] = 9.8 * barweight * (
-						(barx[i]-hipx[i]) 
-						) / (100 * stance);
-		hipmomenthn[i] = ( 9.8 * (
-						( (neckx[i]-hipx[i])+CoGHeadNeck*Math.cos(backangle[i]*Math.PI/180)*(necklength+headdiam/2) ) * WeightHeadNeck 
-						) / (100 * stance) );
-		hipmomentt[i] = ( 9.8 * (
-						( (1-CoGTrunk)*(neckx[i]-hipx[i]) ) * WeightTrunk
-						) / (100 * stance) );
-		hipmoment[i] = hipmomentb[i] + hipmomenthn[i] + hipmomentt[i];
-						
-		summedmoment[i] = Math.abs(kneemoment[i]) + Math.abs(hipmoment[i]);
-		abskneemoment[i] = Math.abs(kneemoment[i]);
-	} //if(document.getElementById("checkmoment").checked || document.getElementById("checkstats").checked)
-	
-	kneeangle[i] = 90 - anklecurrent[i] + kneecurrent[i];
-	
-	//Sanity check
-	tolen[i] = Math.sqrt( Math.pow(hipx[i]-neckx[i],2) + Math.pow(hipy[i]-necky[i],2 ));
-	flen[i] = Math.sqrt( Math.pow(hipx[i]-kneex[i],2) + Math.pow(hipy[i]-kneey[i],2) + Math.pow(kneez[i],2) );
-	tlen[i] = Math.sqrt( Math.pow(anklexyz[0]-kneex[i],2) + Math.pow(kneey[i]-anklexyz[1],2) + Math.pow(kneez[i],2) ); // Sooooo... the tibia length changes a couple of % through out the squat due to how the stance calcs are done above.  This shouldnt change any of the calcs much.
-	hipangle[i] = Math.acos( ( (barx[i]-hipx[i])*(kneex[i]-hipx[i]) + (bary[i]-hipy[i])*(kneey[i]-hipy[i]) + 0*kneez[i] ) / ( tolen[i] * flen[i] ) ) * 180/Math.PI;
-	
-	// Calc Muscle Lengths //////////////////////////////////////////////////////////////////
-	if(document.getElementById("checkmuscle").checked)
-	{
-		//Muscle Lengths
-		// L = C0 + C1a + C2b + C3b^2 + C4t
-		HAngle = 180 - hipangle[i];
-		KAngle = 90 + anklecurrent[i] - kneecurrent[i];
-		AAngle = 90 + anklecurrent[i];
-		// Normalise to standing length and converted to % change from standing length
-		Iliopsoas[i] = 100*((0.215+	-0.000726*HAngle+	0*KAngle+	0*KAngle*KAngle+	0*AAngle)/0.215 - 1);
-		TFL[i] = 100*((1.436+	-0.0032*HAngle+	-0.000213*KAngle+	0*KAngle*KAngle+	0*AAngle)/1.436 - 1);
-		BicepsFemorisLongHead[i] = 100*((1.048+	0.00209*HAngle+	-0.0016*KAngle+	0*KAngle*KAngle+	0*AAngle)/1.048 - 1);
-		Semimembranosus[i] = 100*((1.027+	0.00199*HAngle+	-0.00222*KAngle+	0*KAngle*KAngle+	0*AAngle)/1.027 - 1);
-		Semitendinosus[i] = 100*((0.987+	0.00207*HAngle+	-0.00178*KAngle+	0*KAngle*KAngle+	0*AAngle)/0.987 - 1);
-		RectusFemoris[i] = 100*((1.107+	-0.0015*HAngle+	0.00199*KAngle+	0*KAngle*KAngle+	0*AAngle)/1.107 - 1);
-		Sartorius[i] = 100*((1.328+	-0.00262*HAngle+	-0.00134*KAngle+	0*KAngle*KAngle+	0*AAngle)/1.328 - 1);
-		Gracilis[i] = 100*((0.968+	0.00123*HAngle+	-0.00179*KAngle+	0*KAngle*KAngle+	0*AAngle)/0.968 - 1);
-		BicepsFemorisShortHead[i] = 100*((0.6+	0*HAngle+	0.000103*KAngle+	-0.0000121*KAngle*KAngle+	0*AAngle)/0.6 - 1);
-		VastusIntermedius[i] = 100*((0.496+	0*HAngle+	0.00388*KAngle+	-0.0000163*KAngle*KAngle+	0*AAngle)/0.496 - 1);
-		VastusLateralis[i] = 100*((0.569+	0*HAngle+	0.00406*KAngle+	-0.0000207*KAngle*KAngle+	0*AAngle)/0.569 - 1);
-		VastusMedialis[i] = 100*((0.489+	0*HAngle+	0.00307*KAngle+	-0.0000153*KAngle*KAngle+	0*AAngle)/0.489 - 1);
-		MedialGastroc[i] = 100*((0.9+	0*HAngle+	-0.00062*KAngle+	0*KAngle*KAngle+	0.00214*AAngle) / (0.9+0.00214*(90+anklezero)) - 1);
-		LateralGastroc[i] = 100*((0.894+	0*HAngle+	-0.0005*KAngle+	0*KAngle*KAngle+	0.00214*AAngle) / (0.894+0.00214*(90+anklezero)) - 1);
-		TibialisAnterior[i] = 100*((0.715+	0*HAngle+	0*KAngle+	0*KAngle*KAngle+	-0.0013*AAngle) / (0.715-0.0013*(90+anklezero)) - 1);
-		Soleus[i] = 100*((0.563+	0*HAngle+	0*KAngle+	0*KAngle*KAngle+	0.00193*AAngle) / (0.563+0.00193*(90+anklezero)) - 1);
-	} // if(document.getElementById("checkmuscle").checked)
-	}
-	
+			var positionarray = new Array();
+			var anklecurrent = new Array();
+			var kneecurrent = new Array();
+			var kneex = new Array();
+			var kneey = new Array();
+			var kneez = new Array();
+			var hipx = new Array();
+			var hipy = new Array();
+			var barx = new Array();
+			var bary = new Array();
+			var neckx = new Array();
+			var necky = new Array();
+			var kneemoment = new Array();
+			var abskneemoment = new Array();
+			var kneemomenthn = new Array();
+			var kneemomentb = new Array();
+			var kneemomentt = new Array();
+			var kneemomentf = new Array();
+			var hipmoment = new Array();
+			var hipmomenthn = new Array();
+			var hipmomentb = new Array();
+			var hipmomentt = new Array();
+			var summedmoment = new Array();
+			var backangle = new Array();
+			var hipangle = new Array();
+			var kneeangle = new Array();
+			var tolen = new Array();
+			var flen = new Array();
+			var tlen = new Array();
+			var ha = new Array();
 
-if(document.getElementById("checkmodel").checked)
-	{
-	//-----------------------
-	// plot neck and head
-	//-----------------------
-	baseheadx = neckx[position] + necklength * Math.cos( backangle[position] * Math.PI/180 );
-	baseheady = necky[position] + necklength * Math.sin( backangle[position] * Math.PI/180 );
-	centerheadx = neckx[position] + (necklength+headdiam) * Math.cos( backangle[position] * Math.PI/180 );
-	centerheady = necky[position] + (necklength+headdiam) * Math.sin( backangle[position] * Math.PI/180 );
+			// A method for determining lower extremity muscle-tendon lengths during flexion/extension movements
+			// Hawkins D, Hull ML.
+			// https://www.researchgate.net/profile/Maury_Hull/publication/20781812_A_method_for_determining_lower_extremity_muscle-tendon_lengths_during_flexionextension_movements/links/0deec5296a6dbe683f000000.pdf
+			// https://www.researchgate.net/publication/20781812_A_method_for_determining_lower_extremity_muscle-tendon_lengths_during_flexionextension_movements
+			// https://www.ncbi.nlm.nih.gov/pubmed/2373721
 
-	steps = 32;
-	radius = headdiam;
-	var headx = new Array();
-	var heady = new Array();
-	for(i=0; i<steps; ++i) {
-		a = 2 * Math.PI / steps * i;
-		headx[i] = radius * Math.cos(a) + centerheadx;
-		heady[i] = radius * Math.sin(a) + centerheady;
-	}
+			// Angles convention changed for muscle length equations.
+			var AAngle = new Array();
+			var KAngle = new Array();
+			var HAngle = new Array();
+			// Muscle arrays
+			var Iliopsoas = new Array();
+			var TFL = new Array();
+			var BicepsFemorisLongHead = new Array();
+			var Semimembranosus = new Array();
+			var Semitendinosus = new Array();
+			var RectusFemoris = new Array();
+			var Sartorius = new Array();
+			var Gracilis = new Array();
+			var BicepsFemorisShortHead = new Array();
+			var VastusIntermedius = new Array();
+			var VastusLateralis = new Array();
+			var VastusMedialis = new Array();
+			var MedialGastroc = new Array();
+			var LateralGastroc = new Array();
+			var TibialisAnterior = new Array();
+			var Soleus = new Array();
 
-	headx[steps] = headx[0];
-	heady[steps] = heady[0];
+			for (i = 0; i < 100; i++) {
+				positionarray[i] = i;
 
-	var plothead = {
-	  x: headx,
-	  y: heady,
-	  type: 'scatter',
-	  mode: 'lines',
-	  line: {
-		color: 'red',
-		width: 2
-	  },
-	  name: ''
-	};
+				// linear ankle breaking model.
+				//anklecurrent[i] = anklezero + i * ankleinc;
+				// LN ankle breaking model. I made this equation up to make the knee break faster early in the squat.
+				// If you have a good reference on how the knee actually breaks please foward it to contact@mysquatmechanics.com
+				anklecurrent[i] = anklezero + (99 / Math.log(1 + 99 / 10)) * Math.log(1 + i / 10) * ankleinc;
 
-	//-----------------------
-	// plot bar
-	//-----------------------
-	steps=32;
-	radius=plate;
-	var weightx = new Array();
-	var weighty = new Array();
-	for(i=0; i<steps; ++i) {
-		a = 2 * Math.PI / steps * i;
-		weightx[i] = radius * Math.cos(a) + barx[position];
-		weighty[i] = radius * Math.sin(a) + bary[position];
-	}
-	weightx[steps] = weightx[0];
-	weighty[steps] = weighty[0];
+				kneecurrent[i] = kneezero - i * kneeinc;
+				kneex[i] = stance * tibia * Math.sin(anklecurrent[i] * Math.PI / 180) + anklexyz[0];
+				kneey[i] = tibia * Math.cos(anklecurrent[i] * Math.PI / 180) + anklexyz[1];
 
-	var plotbar = {
-	  x: weightx,
-	  y: weighty,
-	  type: 'scatter',
-	  mode: 'lines',
-	  line: {
-		color: 'blue',
-		width: 2
-	  },
-	  name: ''
-	};
+				hipx[i] = kneex[i] - stance * femur * Math.cos(kneecurrent[i] * Math.PI / 180);
+				hipy[i] = kneey[i] + femur * Math.sin(kneecurrent[i] * Math.PI / 180);
+				if (stance == 1) {
+					kneez[i] = 0;
+				} else {
+					kneez[i] = Math.sqrt(Math.pow(femur, 2) - Math.pow(kneex[i] - hipx[i], 2) - Math.pow(hipy[i] - kneey[i], 2));
+				}
 
-	//-----------------------
-	// plot bar path
-	//-----------------------
-	var plotbarpath = {
-	  x: barx,
-	  y: bary,
-	  type: 'scatter',
-	  mode: 'lines',
-	  line: {
-		color: 'green',
-		width: 2
-	  },
-	  name: ''
-	};
-	//-----------------------
-	// plot body
-	//-----------------------
-	var plotbody = {
-	  x: new Array(anklexyz[0], toexyz[0], heelxyz[0], anklexyz[0], kneex[position], hipx[position], neckx[position], baseheadx ),
-	  y: new Array(anklexyz[1], toexyz[1], heelxyz[1], anklexyz[1], kneey[position], hipy[position], necky[position], baseheady ),
-	  type: 'scatter',
-	  mode: 'lines+markers',
-	  line: {
-		color: 'red',
-		width: 2
-	  },
-	  name: ''
-	};
+				// CoG calcs //////////////////////////////////////////////////////////////////
+				// Looping because it was easier to use brute force than to solve the below equations :)
+				barx[i] = -1;
+				do {
+					barx[i] += 0.1;
+					bary[i] = hipy[i] + Math.sqrt(Math.pow(torso - highlow, 2) - Math.pow(barx[i] - hipx[i], 2)); //
+					backangle[i] = (180 / Math.PI) * (Math.atan((bary[i] - hipy[i]) / (barx[i] - hipx[i])));
 
-	// vertical line at x=0
-	var yaxisline = {
-	  x: new Array(0, 0),
-	  y: new Array(0, 200),
-	  type: 'scatter',
-	  mode: 'lines',
-	  line: {
-		color: 'grey',
-		width: 1
-	  }
-	};
+					neckx[i] = barx[i] + highlow * Math.cos(backangle[i] * (Math.PI / 180)); //
+					necky[i] = bary[i] + highlow * Math.sin(backangle[i] * (Math.PI / 180)); //
 
-	var data = [plothead, plotbody, plotbar, plotbarpath, yaxisline];
+					totalmoment = barx[i] * barweight +
+						(neckx[i] + CoGHeadNeck * Math.cos(backangle[i] * Math.PI / 180) * (necklength + headdiam / 2)) * WeightHeadNeck + //
+						(neckx[i] - CoGTrunk * (neckx[i] - hipx[i])) * WeightTrunk + //
+						(hipx[i] + CoGThigh * (kneex[i] - hipx[i])) * WeightThigh +
+						(kneex[i] - CoGShank * (kneex[i] - anklexyz[0])) * WeightShank;
+				}
+				while (totalmoment < 0);
 
-	var layout = {
-	  title: 'Squat Model',
-	  xaxis: {
-		range: [-110, 110],
-		autorange: false
-	  },
-	  yaxis: {
-		range: [0, 205],
-		autorange: false
-	  },
-	  showlegend: false
-	};
+				// Calc Moments //////////////////////////////////////////////////////////////////
+				if (document.getElementById("checkmoment").checked || document.getElementById("checkstats").checked) {
+					kneemomentb[i] = 9.8 * barweight * (
+						(barx[i] - kneex[i])
+					) / (100 * stance);
+					kneemomenthn[i] = (9.8 * (
+						((neckx[i] - kneex[i]) + CoGHeadNeck * Math.cos(backangle[i] * Math.PI / 180) * (necklength + headdiam / 2)) * WeightHeadNeck //
+					) / (100 * stance));
+					kneemomentt[i] = (9.8 * (
+						((neckx[i] - kneex[i]) - CoGTrunk * (barx[i] - hipx[i])) * WeightTrunk
+					) / (100 * stance));
+					kneemomentf[i] = (9.8 * (
+						((1 - CoGThigh) * (hipx[i] - kneex[i])) * WeightThigh
+					) / (100 * stance));
+					kneemoment[i] = kneemomentb[i] + kneemomenthn[i] + kneemomentt[i] + kneemomentf[i];
 
-	Plotly.newPlot('model', data, layout);
-}else{
-    document.getElementById("model").innerHTML = "";
-	}
+					hipmomentb[i] = 9.8 * barweight * (
+						(barx[i] - hipx[i])
+					) / (100 * stance);
+					hipmomenthn[i] = (9.8 * (
+						((neckx[i] - hipx[i]) + CoGHeadNeck * Math.cos(backangle[i] * Math.PI / 180) * (necklength + headdiam / 2)) * WeightHeadNeck
+					) / (100 * stance));
+					hipmomentt[i] = (9.8 * (
+						((1 - CoGTrunk) * (neckx[i] - hipx[i])) * WeightTrunk
+					) / (100 * stance));
+					hipmoment[i] = hipmomentb[i] + hipmomenthn[i] + hipmomentt[i];
 
-	
-//-----------------------
-// plot top view
-//----------------------
+					summedmoment[i] = Math.abs(kneemoment[i]) + Math.abs(hipmoment[i]);
+					abskneemoment[i] = Math.abs(kneemoment[i]);
+				} //if(document.getElementById("checkmoment").checked || document.getElementById("checkstats").checked)
 
-if(document.getElementById("checkmodel").checked)
-	{
-		
-	var plothipsfemur = {
-	  x: new Array( -kneez[position]-hipwidth, -hipwidth, hipwidth, kneez[position]+hipwidth ),
-	  y: new Array( kneex[position], hipx[position], hipx[position], kneex[position] ),
-	  type: 'scatter',
-	  mode: 'lines+markers',
-	  line: {
-		color: 'red',
-		width: 2
-	  },
-	  name: ''
-	};
+				kneeangle[i] = 90 - anklecurrent[i] + kneecurrent[i];
 
-	var plotbar = {
-	  x: new Array( -110, -72, -72, -67, -67, 67, 67, 72, 72, 110, 110, 72, 72, 67, 67, -67, -67, -72, -72, -110, -110),
-	  y: new Array( -2.5+barx[position], -2.5+barx[position], -plate+barx[position], -plate+barx[position],-1.5+barx[position],-1.5+barx[position],-plate+barx[position],-plate+barx[position],-2.5+barx[position],-2.5+barx[position],2.5+barx[position],2.5+barx[position],plate+barx[position],plate+barx[position],1.5+barx[position],1.5+barx[position],plate+barx[position],plate+barx[position],2.5+barx[position],2.5+barx[position], -2.5+barx[position]),
-	  type: 'scatter',
-	  mode: 'lines',
-	  line: {
-		color: 'blue',
-		width: 2
-	  },
-	  name: ''
-	};
+				//Sanity check
+				tolen[i] = Math.sqrt(Math.pow(hipx[i] - neckx[i], 2) + Math.pow(hipy[i] - necky[i], 2));
+				flen[i] = Math.sqrt(Math.pow(hipx[i] - kneex[i], 2) + Math.pow(hipy[i] - kneey[i], 2) + Math.pow(kneez[i], 2));
+				tlen[i] = Math.sqrt(Math.pow(anklexyz[0] - kneex[i], 2) + Math.pow(kneey[i] - anklexyz[1], 2) + Math.pow(kneez[i], 2)); // Sooooo... the tibia length changes a couple of % through out the squat due to how the stance calcs are done above.  This shouldnt change any of the calcs much.
+				hipangle[i] = Math.acos(((barx[i] - hipx[i]) * (kneex[i] - hipx[i]) + (bary[i] - hipy[i]) * (kneey[i] - hipy[i]) + 0 * kneez[i]) / (tolen[i] * flen[i])) * 180 / Math.PI;
 
-	var data = [plothipsfemur, plotbar];
-
-	var layout = {
-	  title: 'Axial view of hips and thighs',
-	  xaxis: {
-		range: [-110, 110],
-		autorange: false
-	  },
-	  yaxis: {
-		range: [-100, 100],
-		autorange: false
-	  },
-	  showlegend: false
-	};
-
-	Plotly.newPlot('model2', data, layout);
-}else{
-    document.getElementById("model2").innerHTML = "";
-	}
+				// Calc Muscle Lengths //////////////////////////////////////////////////////////////////
+				if (document.getElementById("checkmuscle").checked) {
+					//Muscle Lengths
+					// L = C0 + C1a + C2b + C3b^2 + C4t
+					HAngle = 180 - hipangle[i];
+					KAngle = 90 + anklecurrent[i] - kneecurrent[i];
+					AAngle = 90 + anklecurrent[i];
+					// Normalise to standing length and converted to % change from standing length
+					Iliopsoas[i] = 100 * ((0.215 + -0.000726 * HAngle + 0 * KAngle + 0 * KAngle * KAngle + 0 * AAngle) / 0.215 - 1);
+					TFL[i] = 100 * ((1.436 + -0.0032 * HAngle + -0.000213 * KAngle + 0 * KAngle * KAngle + 0 * AAngle) / 1.436 - 1);
+					BicepsFemorisLongHead[i] = 100 * ((1.048 + 0.00209 * HAngle + -0.0016 * KAngle + 0 * KAngle * KAngle + 0 * AAngle) / 1.048 - 1);
+					Semimembranosus[i] = 100 * ((1.027 + 0.00199 * HAngle + -0.00222 * KAngle + 0 * KAngle * KAngle + 0 * AAngle) / 1.027 - 1);
+					Semitendinosus[i] = 100 * ((0.987 + 0.00207 * HAngle + -0.00178 * KAngle + 0 * KAngle * KAngle + 0 * AAngle) / 0.987 - 1);
+					RectusFemoris[i] = 100 * ((1.107 + -0.0015 * HAngle + 0.00199 * KAngle + 0 * KAngle * KAngle + 0 * AAngle) / 1.107 - 1);
+					Sartorius[i] = 100 * ((1.328 + -0.00262 * HAngle + -0.00134 * KAngle + 0 * KAngle * KAngle + 0 * AAngle) / 1.328 - 1);
+					Gracilis[i] = 100 * ((0.968 + 0.00123 * HAngle + -0.00179 * KAngle + 0 * KAngle * KAngle + 0 * AAngle) / 0.968 - 1);
+					BicepsFemorisShortHead[i] = 100 * ((0.6 + 0 * HAngle + 0.000103 * KAngle + -0.0000121 * KAngle * KAngle + 0 * AAngle) / 0.6 - 1);
+					VastusIntermedius[i] = 100 * ((0.496 + 0 * HAngle + 0.00388 * KAngle + -0.0000163 * KAngle * KAngle + 0 * AAngle) / 0.496 - 1);
+					VastusLateralis[i] = 100 * ((0.569 + 0 * HAngle + 0.00406 * KAngle + -0.0000207 * KAngle * KAngle + 0 * AAngle) / 0.569 - 1);
+					VastusMedialis[i] = 100 * ((0.489 + 0 * HAngle + 0.00307 * KAngle + -0.0000153 * KAngle * KAngle + 0 * AAngle) / 0.489 - 1);
+					MedialGastroc[i] = 100 * ((0.9 + 0 * HAngle + -0.00062 * KAngle + 0 * KAngle * KAngle + 0.00214 * AAngle) / (0.9 + 0.00214 * (90 + anklezero)) - 1);
+					LateralGastroc[i] = 100 * ((0.894 + 0 * HAngle + -0.0005 * KAngle + 0 * KAngle * KAngle + 0.00214 * AAngle) / (0.894 + 0.00214 * (90 + anklezero)) - 1);
+					TibialisAnterior[i] = 100 * ((0.715 + 0 * HAngle + 0 * KAngle + 0 * KAngle * KAngle + -0.0013 * AAngle) / (0.715 - 0.0013 * (90 + anklezero)) - 1);
+					Soleus[i] = 100 * ((0.563 + 0 * HAngle + 0 * KAngle + 0 * KAngle * KAngle + 0.00193 * AAngle) / (0.563 + 0.00193 * (90 + anklezero)) - 1);
+				} // if(document.getElementById("checkmuscle").checked)
+			}
 
 
-//-----------------------
-// plot stats
-//----------------------
+			if (document.getElementById("checkmodel").checked) {
+				//-----------------------
+				// plot neck and head
+				//-----------------------
+				baseheadx = neckx[position] + necklength * Math.cos(backangle[position] * Math.PI / 180);
+				baseheady = necky[position] + necklength * Math.sin(backangle[position] * Math.PI / 180);
+				centerheadx = neckx[position] + (necklength + headdiam) * Math.cos(backangle[position] * Math.PI / 180);
+				centerheady = necky[position] + (necklength + headdiam) * Math.sin(backangle[position] * Math.PI / 180);
 
-if(document.getElementById("checkstats").checked)
-	{
-	
-	var data = [
-	{ y: abskneemoment, x: bary, type: 'scatter', name: 'Knee moment', line: { dash: 'dot' } },
-	{ y: hipmoment, x: bary, type: 'scatter', name: 'Hip moment', line: { dash: 'dot' } },
-	{ y: summedmoment, x: bary, type: 'scatter', name: 'Summed moment', line: { dash: 'dot' } },
-	{ y: backangle, x: bary, type: 'scatter', name: 'Back angle', yaxis: 'y2' },
-	{ y: hipangle, x: bary, type: 'scatter', name: 'Hip angle', yaxis: 'y2' },
-	{ y: kneeangle, x: bary, type: 'scatter', name: 'Knee angle', yaxis: 'y2' },
-	{ y: anklecurrent, x: bary, type: 'scatter', name: 'Ankle angle', yaxis: 'y2' },
-	//{ y: flen, x: bary, type: 'scatter', name: 'flen', yaxis: 'y2' },
-	//{ y: tlen, x: bary, type: 'scatter', name: 'tlen', yaxis: 'y2' },
-	//{ y: AAngle, x: bary, type: 'scatter', name: 'AAngle', yaxis: 'y2' },
-	//{ y: KAngle, x: bary, type: 'scatter', name: 'KAngle', yaxis: 'y2' },
-	//{ y: HAngle, x: bary, type: 'scatter', name: 'HAngle', yaxis: 'y2' },
-	//{ y: tolen, x: bary, type: 'scatter', name: 'tolen', yaxis: 'y2' },
-	//{ y: flen, x: bary, type: 'scatter', name: 'flen', yaxis: 'y2' },
-	{ y: new Array(0,180), x: new Array(bary[position],bary[position]), type: 'scatter', name: 'Current Position', yaxis: 'y2' }
-	];
+				steps = 32;
+				radius = headdiam;
+				var headx = new Array();
+				var heady = new Array();
+				for (i = 0; i < steps; ++i) {
+					a = 2 * Math.PI / steps * i;
+					headx[i] = radius * Math.cos(a) + centerheadx;
+					heady[i] = radius * Math.sin(a) + centerheady;
+				}
 
-	var layout = {
-	  title: 'Squat Stats',
-	  xaxis: {
-		range: [bary[0], bary[99]],
-		autorange: false,
-		title: 'Bar Height (cm)'
-	  },
-	  yaxis: {
-		range: [0, 2000],
-		autorange: false,//
-		showgrid: false,
-		zeroline: false,
-		showline: false,
-	//showticklabels: false,
-		title: 'Moment (N.m)'
-	  },
-	  yaxis2: {
-		range: [0, 180],
-		autorange: false,
-		overlaying: 'y',
-		title: 'Angle',
-		side: 'right'
-	  },
-	  legend: {
-		xanchor:"left",
-		yanchor:"top",
-		y:1.1, 
-		x:1.15,
-		font: {
-		  size: 8
+				headx[steps] = headx[0];
+				heady[steps] = heady[0];
+
+				var plothead = {
+					x: headx,
+					y: heady,
+					type: 'scatter',
+					mode: 'lines',
+					line: {
+						color: 'red',
+						width: 2
+					},
+					name: ''
+				};
+
+				//-----------------------
+				// plot bar
+				//-----------------------
+				steps = 32;
+				radius = plate;
+				var weightx = new Array();
+				var weighty = new Array();
+				for (i = 0; i < steps; ++i) {
+					a = 2 * Math.PI / steps * i;
+					weightx[i] = radius * Math.cos(a) + barx[position];
+					weighty[i] = radius * Math.sin(a) + bary[position];
+				}
+				weightx[steps] = weightx[0];
+				weighty[steps] = weighty[0];
+
+				var plotbar = {
+					x: weightx,
+					y: weighty,
+					type: 'scatter',
+					mode: 'lines',
+					line: {
+						color: 'blue',
+						width: 2
+					},
+					name: ''
+				};
+
+				//-----------------------
+				// plot bar path
+				//-----------------------
+				var plotbarpath = {
+					x: barx,
+					y: bary,
+					type: 'scatter',
+					mode: 'lines',
+					line: {
+						color: 'green',
+						width: 2
+					},
+					name: ''
+				};
+				//-----------------------
+				// plot body
+				//-----------------------
+				var plotbody = {
+					x: new Array(anklexyz[0], toexyz[0], heelxyz[0], anklexyz[0], kneex[position], hipx[position], neckx[position], baseheadx),
+					y: new Array(anklexyz[1], toexyz[1], heelxyz[1], anklexyz[1], kneey[position], hipy[position], necky[position], baseheady),
+					type: 'scatter',
+					mode: 'lines+markers',
+					line: {
+						color: 'red',
+						width: 2
+					},
+					name: ''
+				};
+
+				// vertical line at x=0
+				var yaxisline = {
+					x: new Array(0, 0),
+					y: new Array(0, 200),
+					type: 'scatter',
+					mode: 'lines',
+					line: {
+						color: 'grey',
+						width: 1
+					}
+				};
+
+				var data = [plothead, plotbody, plotbar, plotbarpath, yaxisline];
+
+				var layout = {
+					title: 'Squat Model',
+					xaxis: {
+						range: [-110, 110],
+						autorange: false
+					},
+					yaxis: {
+						range: [0, 205],
+						autorange: false
+					},
+					showlegend: false
+				};
+
+				Plotly.newPlot('model', data, layout);
+			} else {
+				document.getElementById("model").innerHTML = "";
+			}
+
+
+			//-----------------------
+			// plot top view
+			//----------------------
+
+			if (document.getElementById("checkmodel").checked) {
+
+				var plothipsfemur = {
+					x: new Array(-kneez[position] - hipwidth, -hipwidth, hipwidth, kneez[position] + hipwidth),
+					y: new Array(kneex[position], hipx[position], hipx[position], kneex[position]),
+					type: 'scatter',
+					mode: 'lines+markers',
+					line: {
+						color: 'red',
+						width: 2
+					},
+					name: ''
+				};
+
+				var plotbar = {
+					x: new Array(-110, -72, -72, -67, -67, 67, 67, 72, 72, 110, 110, 72, 72, 67, 67, -67, -67, -72, -72, -110, -110),
+					y: new Array(-2.5 + barx[position], -2.5 + barx[position], -plate + barx[position], -plate + barx[position], -1.5 + barx[position], -1.5 + barx[position], -plate + barx[position], -plate + barx[position], -2.5 + barx[position], -2.5 + barx[position], 2.5 + barx[position], 2.5 + barx[position], plate + barx[position], plate + barx[position], 1.5 + barx[position], 1.5 + barx[position], plate + barx[position], plate + barx[position], 2.5 + barx[position], 2.5 + barx[position], -2.5 + barx[position]),
+					type: 'scatter',
+					mode: 'lines',
+					line: {
+						color: 'blue',
+						width: 2
+					},
+					name: ''
+				};
+
+				var data = [plothipsfemur, plotbar];
+
+				var layout = {
+					title: 'Axial view of hips and thighs',
+					xaxis: {
+						range: [-110, 110],
+						autorange: false
+					},
+					yaxis: {
+						range: [-100, 100],
+						autorange: false
+					},
+					showlegend: false
+				};
+
+				Plotly.newPlot('model2', data, layout);
+			} else {
+				document.getElementById("model2").innerHTML = "";
+			}
+
+
+			//-----------------------
+			// plot stats
+			//----------------------
+
+			if (document.getElementById("checkstats").checked) {
+
+				var data = [
+					{ y: abskneemoment, x: bary, type: 'scatter', name: 'Knee moment', line: { dash: 'dot' } },
+					{ y: hipmoment, x: bary, type: 'scatter', name: 'Hip moment', line: { dash: 'dot' } },
+					{ y: summedmoment, x: bary, type: 'scatter', name: 'Summed moment', line: { dash: 'dot' } },
+					{ y: backangle, x: bary, type: 'scatter', name: 'Back angle', yaxis: 'y2' },
+					{ y: hipangle, x: bary, type: 'scatter', name: 'Hip angle', yaxis: 'y2' },
+					{ y: kneeangle, x: bary, type: 'scatter', name: 'Knee angle', yaxis: 'y2' },
+					{ y: anklecurrent, x: bary, type: 'scatter', name: 'Ankle angle', yaxis: 'y2' },
+					//{ y: flen, x: bary, type: 'scatter', name: 'flen', yaxis: 'y2' },
+					//{ y: tlen, x: bary, type: 'scatter', name: 'tlen', yaxis: 'y2' },
+					//{ y: AAngle, x: bary, type: 'scatter', name: 'AAngle', yaxis: 'y2' },
+					//{ y: KAngle, x: bary, type: 'scatter', name: 'KAngle', yaxis: 'y2' },
+					//{ y: HAngle, x: bary, type: 'scatter', name: 'HAngle', yaxis: 'y2' },
+					//{ y: tolen, x: bary, type: 'scatter', name: 'tolen', yaxis: 'y2' },
+					//{ y: flen, x: bary, type: 'scatter', name: 'flen', yaxis: 'y2' },
+					{ y: new Array(0, 180), x: new Array(bary[position], bary[position]), type: 'scatter', name: 'Current Position', yaxis: 'y2' }
+				];
+
+				var layout = {
+					title: 'Squat Stats',
+					xaxis: {
+						range: [bary[0], bary[99]],
+						autorange: false,
+						title: 'Bar Height (cm)'
+					},
+					yaxis: {
+						range: [0, 2000],
+						autorange: false,//
+						showgrid: false,
+						zeroline: false,
+						showline: false,
+						//showticklabels: false,
+						title: 'Moment (N.m)'
+					},
+					yaxis2: {
+						range: [0, 180],
+						autorange: false,
+						overlaying: 'y',
+						title: 'Angle',
+						side: 'right'
+					},
+					legend: {
+						xanchor: "left",
+						yanchor: "top",
+						y: 1.1,
+						x: 1.15,
+						font: {
+							size: 8
+						}
+					}
+				};
+
+				Plotly.newPlot('stats', data, layout);
+			} else {
+				document.getElementById("stats").innerHTML = "";
+			}
+
+
+
+
+
+			//-----------------------
+			// Muscle Lengths 
+			//----------------------
+
+			if (document.getElementById("checkmuscle").checked) {
+
+				var data = [
+					{ y: Iliopsoas, x: bary, type: 'scatter', name: 'Iliopsoas' },
+					{ y: TFL, x: bary, type: 'scatter', name: 'TFL' },
+					{ y: BicepsFemorisLongHead, x: bary, type: 'scatter', name: 'Biceps Femoris Long Head' },
+					{ y: Semimembranosus, x: bary, type: 'scatter', name: 'Semimembranosus' },
+					{ y: Semitendinosus, x: bary, type: 'scatter', name: 'Semitendinosus' },
+					{ y: RectusFemoris, x: bary, type: 'scatter', name: 'Rectus Femoris' },
+					{ y: Sartorius, x: bary, type: 'scatter', name: 'Sartorius' },
+					{ y: Gracilis, x: bary, type: 'scatter', name: 'Gracilis' },
+					{ y: BicepsFemorisShortHead, x: bary, type: 'scatter', name: 'Biceps Femoris Short Head', line: { dash: 'dot' } },
+					{ y: VastusIntermedius, x: bary, type: 'scatter', name: 'Vastus Intermedius', line: { dash: 'dot' } },
+					{ y: VastusLateralis, x: bary, type: 'scatter', name: 'Vastus Lateralis', line: { dash: 'dot' } },
+					{ y: VastusMedialis, x: bary, type: 'scatter', name: 'Vastus Medialis', line: { dash: 'dot' } },
+					{ y: MedialGastroc, x: bary, type: 'scatter', name: 'Medial Gastroc', line: { dash: 'dot' } },
+					{ y: LateralGastroc, x: bary, type: 'scatter', name: 'Lateral Gastroc', line: { dash: 'dot' } },
+					{ y: TibialisAnterior, x: bary, type: 'scatter', name: 'Tibialis Anterior', line: { dash: 'dot' } },
+					{ y: Soleus, x: bary, type: 'scatter', name: 'Soleus', line: { dash: 'dot' } },
+					{ y: new Array(-50, 50), x: new Array(bary[position], bary[position]), type: 'scatter', name: 'Current Position' }
+				];
+
+				var layout = {
+					title: 'Muscle Lengths (+ve = longer)',
+					xaxis: {
+						range: [bary[0], bary[99]],
+						autorange: false,
+						title: 'Bar Height (cm)'
+					},
+					yaxis: {
+						range: [-50, 50],
+						autorange: true,
+						showgrid: false,
+						zeroline: false,
+						showline: false,
+						//showticklabels: false,
+						title: '% Change in muscle length'
+					},
+					legend: {
+						xanchor: "left",
+						yanchor: "top",
+						y: 1.1,
+						x: 1.15,
+						font: {
+							size: 8
+						}
+					}
+				};
+
+				Plotly.newPlot('stats2', data, layout);
+			} else {
+				document.getElementById("stats2").innerHTML = "";
+			}
+
+
+
+
+			//-----------------------
+			// plot knee moments
+			//----------------------
+
+			if (document.getElementById("checkmoment").checked) {
+
+				var data = [
+					{ y: kneemoment, x: bary, type: 'scatter', name: 'Knee Moment' },
+					{ y: kneemomentb, x: bary, type: 'scatter', name: 'Bar contribution', line: { dash: 'dot' } },
+					{ y: kneemomenthn, x: bary, type: 'scatter', name: 'H&N contribution', line: { dash: 'dot' } },
+					{ y: kneemomentt, x: bary, type: 'scatter', name: 'Trunk contribution', line: { dash: 'dot' } },
+					{ y: kneemomentf, x: bary, type: 'scatter', name: 'Thigh contribution', line: { dash: 'dot' } },
+					{ y: new Array(-900, 100), x: new Array(bary[position], bary[position]), type: 'scatter', name: 'Current Position' }
+				];
+
+				var layout = {
+					title: 'Knee Moment Breakdown',
+					xaxis: {
+						range: [bary[0], bary[99]],
+						autorange: false,
+						title: 'Bar Height (cm)'
+					},
+					yaxis: {
+						range: [-900, 100],
+						autorange: false,
+						showgrid: false,
+						zeroline: false,
+						showline: false,
+						//showticklabels: false,
+						title: 'Moment (N.m) (+ve = clockwise)'
+					},
+					legend: {
+						xanchor: "left",
+						yanchor: "top",
+						y: 1.1,
+						x: 1.15,
+						font: {
+							size: 8
+						}
+					}
+				};
+
+				Plotly.newPlot('m1', data, layout);
+			} else {
+				document.getElementById("m1").innerHTML = "";
+			}
+			//-----------------------
+			// plot hip moments
+			//----------------------
+
+			if (document.getElementById("checkmoment").checked) {
+
+				var data = [
+					{ y: hipmoment, x: bary, type: 'scatter', name: 'Hip Moment' },
+					{ y: hipmomentb, x: bary, type: 'scatter', name: 'Bar contribution', line: { dash: 'dot' } },
+					{ y: hipmomenthn, x: bary, type: 'scatter', name: 'H&N contribution', line: { dash: 'dot' } },
+					{ y: hipmomentt, x: bary, type: 'scatter', name: 'Trunk contribution', line: { dash: 'dot' } },
+					{ y: new Array(-100, 900), x: new Array(bary[position], bary[position]), type: 'scatter', name: 'Current Position' }
+				];
+
+				var layout = {
+					title: 'Hip Moment Breakdown',
+					xaxis: {
+						range: [bary[0], bary[99]],
+						autorange: false,
+						title: 'Bar Height (cm)'
+					},
+					yaxis: {
+						range: [-100, 900],
+						autorange: false,//
+						showgrid: false,
+						zeroline: false,
+						showline: false,
+						//showticklabels: false,
+						title: 'Moment (N.m) (+ve = clockwise)'
+					},
+					legend: {
+						xanchor: "left",
+						yanchor: "top",
+						y: 1.1,
+						x: 1.15,
+						font: {
+							size: 8
+						}
+					}
+				};
+
+				Plotly.newPlot('m2', data, layout);
+			} else {
+				document.getElementById("m2").innerHTML = "";
+			}
+
+
+
+
 		}
-	  }
-	};
-
-	Plotly.newPlot('stats', data, layout);
-}else{
-    document.getElementById("stats").innerHTML = "";
-	}
-
-	
-
-
-
-//-----------------------
-// Muscle Lengths 
-//----------------------
-
-if(document.getElementById("checkmuscle").checked)
-	{
-	
-	var data = [
-	{ y: Iliopsoas, x: bary, type: 'scatter', name: 'Iliopsoas'},
-	{ y: TFL, x: bary, type: 'scatter', name: 'TFL'},
-	{ y: BicepsFemorisLongHead, x: bary, type: 'scatter', name: 'Biceps Femoris Long Head'},
-	{ y: Semimembranosus, x: bary, type: 'scatter', name: 'Semimembranosus'},
-	{ y: Semitendinosus, x: bary, type: 'scatter', name: 'Semitendinosus'},
-	{ y: RectusFemoris, x: bary, type: 'scatter', name: 'Rectus Femoris'},
-	{ y: Sartorius, x: bary, type: 'scatter', name: 'Sartorius'},
-	{ y: Gracilis, x: bary, type: 'scatter', name: 'Gracilis'},
-	{ y: BicepsFemorisShortHead, x: bary, type: 'scatter', name: 'Biceps Femoris Short Head', line: { dash: 'dot' }},
-	{ y: VastusIntermedius, x: bary, type: 'scatter', name: 'Vastus Intermedius', line: { dash: 'dot' }},
-	{ y: VastusLateralis, x: bary, type: 'scatter', name: 'Vastus Lateralis', line: { dash: 'dot' }},
-	{ y: VastusMedialis, x: bary, type: 'scatter', name: 'Vastus Medialis', line: { dash: 'dot' }},
-	{ y: MedialGastroc, x: bary, type: 'scatter', name: 'Medial Gastroc', line: { dash: 'dot' }},
-	{ y: LateralGastroc, x: bary, type: 'scatter', name: 'Lateral Gastroc', line: { dash: 'dot' }},
-	{ y: TibialisAnterior, x: bary, type: 'scatter', name: 'Tibialis Anterior', line: { dash: 'dot' }},
-	{ y: Soleus, x: bary, type: 'scatter', name: 'Soleus', line: { dash: 'dot' }},
-	{ y: new Array(-50,50), x: new Array(bary[position],bary[position]), type: 'scatter', name: 'Current Position' }
-	];
-
-	var layout = {
-	  title: 'Muscle Lengths (+ve = longer)',
-	  xaxis: {
-		range: [bary[0], bary[99]],
-		autorange: false,
-		title: 'Bar Height (cm)'
-	  },
-	  yaxis: {
-		range: [-50, 50],
-		autorange: true,
-		showgrid: false,
-		zeroline: false,
-		showline: false,
-	//showticklabels: false,
-		title: '% Change in muscle length'
-	  },
-	  legend: {
-		xanchor:"left",
-		yanchor:"top",
-		y:1.1, 
-		x:1.15,
-		font: {
-		  size: 8
-		}
-	  }
-	};
-
-	Plotly.newPlot('stats2', data, layout);		
-}else{
-    document.getElementById("stats2").innerHTML = "";
-	}
-
-
-
-
-//-----------------------
-// plot knee moments
-//----------------------
-
-if(document.getElementById("checkmoment").checked)
-	{
-	
-	var data = [
-	{ y: kneemoment, x: bary, type: 'scatter', name: 'Knee Moment' },
-	{ y: kneemomentb, x: bary, type: 'scatter', name: 'Bar contribution', line: { dash: 'dot' } },
-	{ y: kneemomenthn, x: bary, type: 'scatter', name: 'H&N contribution', line: { dash: 'dot' } },
-	{ y: kneemomentt, x: bary, type: 'scatter', name: 'Trunk contribution', line: { dash: 'dot' } },
-	{ y: kneemomentf, x: bary, type: 'scatter', name: 'Thigh contribution', line: { dash: 'dot' } },
-	{ y: new Array(-900, 100), x: new Array(bary[position],bary[position]), type: 'scatter', name: 'Current Position' }
-	];
-
-	var layout = {
-	  title: 'Knee Moment Breakdown',
-	  xaxis: {
-		range: [bary[0], bary[99]],
-		autorange: false,
-		title: 'Bar Height (cm)'
-	  },
-	  yaxis: {
-		range: [-900, 100],
-		autorange: false,
-		showgrid: false,
-		zeroline: false,
-		showline: false,
-	//showticklabels: false,
-		title: 'Moment (N.m) (+ve = clockwise)'
-	  },
-	  legend: {
-		xanchor:"left",
-		yanchor:"top",
-		y:1.1, 
-		x:1.15,
-		font: {
-		  size: 8
-		}
-	  }
-	};
-
-	Plotly.newPlot('m1', data, layout);	
-}else{
-    document.getElementById("m1").innerHTML = "";
-	}
-//-----------------------
-// plot hip moments
-//----------------------
-
-if(document.getElementById("checkmoment").checked)
-	{
-	
-	var data = [
-	{ y: hipmoment, x: bary, type: 'scatter', name: 'Hip Moment' },
-	{ y: hipmomentb, x: bary, type: 'scatter', name: 'Bar contribution', line: { dash: 'dot' } },
-	{ y: hipmomenthn, x: bary, type: 'scatter', name: 'H&N contribution', line: { dash: 'dot' } },
-	{ y: hipmomentt, x: bary, type: 'scatter', name: 'Trunk contribution', line: { dash: 'dot' } },
-	{ y: new Array(-100, 900), x: new Array(bary[position],bary[position]), type: 'scatter', name: 'Current Position' }
-	];
-
-	var layout = {
-	  title: 'Hip Moment Breakdown',
-	  xaxis: {
-		range: [bary[0], bary[99]],
-		autorange: false,
-		title: 'Bar Height (cm)'
-	  },
-	  yaxis: {
-		range: [-100, 900],
-		autorange: false,//
-		showgrid: false,
-		zeroline: false,
-		showline: false,
-	//showticklabels: false,
-		title: 'Moment (N.m) (+ve = clockwise)'
-	  },
-	  legend: {
-		xanchor:"left",
-		yanchor:"top",
-		y:1.1, 
-		x:1.15,
-		font: {
-		  size: 8
-		}
-	  }
-	};
-
-	Plotly.newPlot('m2', data, layout);	
-}else{
-    document.getElementById("m2").innerHTML = "";
-	}
-
-
-
-
-}
-</script>
+	</script>
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-	  ga('create', 'UA-73588883-1', 'auto');
-	  ga('send', 'pageview');
+		ga('create', 'UA-73588883-1', 'auto');
+		ga('send', 'pageview');
 
 	</script>
-  </body>
+</body>
+
 </html>
