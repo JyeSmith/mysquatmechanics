@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://blockchain.info/Resources/js/pay-now-button.js"></script>
+    <meta name="generator"
+    content="squat deadlift mechanics model modelling" />
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8" />
+    <title>MySquatMechanics</title>
+    <meta name="just some guy" content="" />
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- FONT -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
+    <!-- CSS -->
+	<!-- http://fortawesome.github.io/Font-Awesome/get-started/ -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">	
+    <link rel="stylesheet" href="http://www.mysquatmechanics.com/css/normalize.css" />
+    <link rel="stylesheet" href="http://www.mysquatmechanics.com/css/skeleton.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="http://www.mysquatmechanics.com/images/favicon.png" />	  
+	<!-- Plotly.js -->
+	<script async src="https://cdn.plot.ly/plotly-latest.min.js"></script>	
+	<!-- Other awesome scripts -->
+	<script async src="themodel.js"></script>
+	<script async src="http://mysquatmechanics.com/bench/somefunctions.js"></script>
+	<script async src="http://mysquatmechanics.com/bench/BarPathBridges.js"></script>
+	<script async src="http://mysquatmechanics.com/bench/BarPathKazmaier.js"></script>
+		
+	    <style>
+		ul.share-buttons{
+		  list-style: none;
+		  padding: 0;
+		}
+
+		ul.share-buttons li{
+		  display: inline;
+		}
+
+		ul.share-buttons img{
+		  width: 32px;
+		}
+		#ad img {
+			margin-bottom: 50px;
+			max-width: 100%;
+			height: auto;
+		}
+		</style>
+  </head>
+
+  <body onload="update()">
+    <!-- Primary Page Layout-->
+    <div class="container">
+	
+      <div class="row">	  
+        <div class="nine columns">
+          <h1>MySquatMechanics.com</h1>
+        </div>		
+        <div class="three columns">
+			<ul class="share-buttons"> 
+			  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.mysquatmechanics.com%2F&t=My%20Squat%20Mechanics" title="Share on Facebook" target="_blank"><img src="http://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+			  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.mysquatmechanics.com%2F&text=My%20Squat%20Mechanics:%20http%3A%2F%2Fwww.mysquatmechanics.com%2F" target="_blank" title="Tweet"><img src="http://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+			  <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.mysquatmechanics.com%2F" target="_blank" title="Share on Google+"><img src="http://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+			  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.mysquatmechanics.com%2F&title=My%20Squat%20Mechanics" target="_blank" title="Submit to Reddit"><img src="http://mysquatmechanics.com/images/social_flat_rounded_rects_svg/Reddit.svg"></a></li>
+			</ul>
+        </div>		
+      </div>
+	  
+      <div class="row">	  
+        <div class="three columns">
+			<h5> <a href="http://www.mysquatmechanics.com/" style="text-decoration: none; color : #000" >MySquatMechanics</a> </h5>
+        </div>
+        <div class="three columns">
+			<h5> <a href="http://www.mysquatmechanics.com/bench" style="text-decoration: none; color : #000" >MyBenchMechanics</a> </h5>
+        </div>
+        <div class="three columns">
+			<h5> <a href="http://www.mysquatmechanics.com/deadlift" style="text-decoration: none; color : #000" >MyDeadliftMechanics</a> </h5>
+        </div>		
+      </div>
+
+      <div class="row">
+        <div class="twelve columns" id="ad" ><a href="http://www.irontanksgymgear.com/" onclick="ga('send','event','ad','http://www.irontanksgymgear.com/')" target="_blank" ><img src="http://mysquatmechanics.com/irontanksgymgear.png" alt="Iron Tanks Gym Gear" ></a></div>
+      </div>
+	  	  
+      <div class="row">
+        <div class="one-half column">
+		
+          <div class="row">
+            <div class="one-third column">
+              <b>Upper Arm</b>
+            </div>
+            <div class="one-third column">
+              <input type="range" id="upperarmslider" min="10" max="50" value="30" step="1" oninput="update(this.value)" />
+            </div>
+            <div class="one-third column">
+            <span id="upperarmvalue"> </span></div>
+          </div>
+		  
+          <div class="row">
+            <div class="one-third column">
+              <b>Forearm</b>
+            </div>
+            <div class="one-third column">
+              <input type="range" id="forearmslider" min="10" max="50" value="33" step="1" oninput="update(this.value)" />
+            </div>
+            <div class="one-third column">
+            <span id="forearmvalue"> </span></div>
+          </div>	
+		  
+          <div class="row">
+            <div class="one-third column">
+              <b>Shoulder Width</b>
+            </div>
+            <div class="one-third column">
+              <input type="range" id="shoulderslider" min="20" max="100" value="46" step="1" oninput="update(this.value)" />
+            </div>
+            <div class="one-third column">
+            <span id="shouldervalue"> </span></div>
+          </div>	
+		  
+          <div class="row">
+            <div class="one-third column">
+              <b>Grip Width</b>
+            </div>
+            <div class="one-third column">
+              <input type="range" id="gripslider" min="0" max="131" value="76" step="1" oninput="update(this.value)" />
+            </div>
+            <div class="one-third column">
+            <span id="gripvalue"> </span></div>
+          </div>
+		  
+          <div class="row">
+            <div class="one-third column">
+			  <input type="checkbox" id="checklock" onchange="update(this.value)" checked="unchecked" ><b> Lock Elbows</b>
+            </div>
+          </div>
+		  
+          <div class="row">
+            <div class="one-third column">
+			  <b>Elbow Flare</b>
+            </div>
+            <div class="one-third column">
+              <input type="range" id="flareslider" min="0" max="60" value="30" step="1" oninput="update(this.value)" />
+            </div>
+            <div class="one-third column">
+              <span id="flarevalue"> </span>
+			</div>
+          </div>
+		  
+        </div>
+        <div class="one-half column">
+		  
+          <div class="row">
+            <b>Bar Chest Position</b>
+          </div>
+		  
+          <div class="row">
+            <div class="one-third column">
+              <b>Height</b>
+            </div>
+            <div class="one-third column">
+              <input type="range" id="heightslider" min="0" max="20" value="15" step="1" oninput="update(this.value)" />
+            </div>
+            <div class="one-third column">
+            <span id="heightvalue"> </span></div>
+          </div>
+		  
+          <div class="row">
+            <div class="one-third column">
+              <b>Forward Travel</b>
+            </div>
+            <div class="one-third column">
+              <input type="range" id="travelslider" min="0" max="50" value="15" step="1" oninput="update(this.value)" />
+            </div>
+            <div class="one-third column">
+            <span id="travelvalue"> </span></div>
+          </div>
+		  
+		  <br>
+		  
+          <div class="row">
+            <div class="one-third column">
+				<b>Bench Position</b> 
+            </div>
+            <div class="two-thirds column">
+              <input type="range" id="positionslider" min="0" max="99" value="0" step="1" oninput="update(this.value)" />
+            </div>
+          </div>	
+		  
+          <div class="row">
+            <div class="one-third column">
+				<b>Bar Path</b>
+            </div>
+            <div class="two-thirds column">
+              	<input type="radio" name="barpathradio" id="checkstraight" onclick="update(this.value)" checked="checked" >Straight
+				<input type="radio" name="barpathradio" id="checkBridges" onclick="update(this.value)">Bridges
+				<input type="radio" name="barpathradio" id="checkKazmaier" onclick="update(this.value)">Kazmaier
+            </div>
+          </div>
+	  
+        </div>
+      </div>
+	  
+      <div class="row">
+        <div class="one-half column" id="model2"></div>
+        <div class="one-half column" id="model"></div>
+      </div>
+      <div class="row">
+        <div class="one-half column" id="model3"></div>
+      </div>
+      <div class="row">
+        <div class="twelve columns" id="stats"></div>
+      </div>
+	  	   
+        <div class="row">
+            <div class="one-half column">
+			
+				<h3>Elbow Flare</h3>
+				<p>
+				 The model has the option to set the elbow flare (angle between body and elbows) or lock the elbow tilt to 0 degrees (elbows can not travel forward or behind the bar).
+				</p>
+				<p>
+				 Unfortunately the elbow position has one too many variables to model accurately.  So if you leave the <i>lock</i> option unchecked you can adjust the elbow flare.  However the model does some funny thing beyond about 60 degrees.
+				</p>
+				<p>
+				 Locking the elbow position so that they can not travel in front or behind the bar allows for the elbow position to be determined more accurately.  This also eliminates the option to select the flare angle.
+				</p>
+				<p>
+				 Have a play with both options and see what works best for you.
+				</p>
+				
+			</div> 
+            <div class="one-half column">
+			
+				<h3>Bar Path</h3>
+				<p>
+				 Ever wanted to see if changing your bar path to mimic one of the greats would help?  Well now you can.  Check the box for <i>Bridges</i> or <i>Kazmaier</i> and see how your moments change.  Does it make it easier or harder?
+				</p>
+				
+			</div> 
+        </div> 		
+
+      <div class="row" id="info">
+        <div class="twelve columns">
+		<h3>Info</h3>
+        <br />
+        <a href="http://strengtheory.com/how-to-bench/">
+        <b>How to Bench: The Definitive Guide</b> by Greg Nuckols 04/19/2016</a>
+        <br />	
+		
+        <a href="https://www.t-nation.com/training/4-bench-press-lies/">
+        <b>4 Bench Press Lies</b> by Tony Bonvechio 08/27/2014</a>
+        <br />	
+		
+        <a href="https://etda.libraries.psu.edu/catalog/8894">
+        <b>A biomechanical anlysis of the bench press</b> by Duffey, Michael J 08/21/2008</a>
+        <br />		
+		
+        <br />
+        <br /></div>
+      </div>
+	  
+      <div class="row">
+        <hr />
+      </div>
+	  
+      <div class="row">
+        <div class="twelve columns">
+			<div align="center">
+			  contact@mysquatmechanics.com - 2016
+			</div>
+        </div>
+      </div>
+	  
+    </div>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-73588883-8', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+  </body>
+</html>
