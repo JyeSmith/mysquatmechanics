@@ -28,7 +28,7 @@ function update(newValue)
 	
 	// Starting positions
 	var shoulderxyz = [0.0, 50.0, shoulder/2];
-	var barxyz = [0.0, shoulderxyz[1] + Math.sqrt( Math.pow(upperarm*1.0 + forearm*1.0, 2) - Math.pow(shoulder2hand, 2) ) - 0.001, grip/2];  // Subtract 0.001 from initial bar height otherwise the first while loop below wont solve for the top bar position.  Its either this or set the forearmangle increment to a finer angle, causing the code take longer to run ¯\_(?)_/¯
+	var barxyz = [0.0, shoulderxyz[1] + Math.sqrt( Math.pow(upperarm*1.0 + forearm*1.0, 2) - Math.pow(shoulder2hand, 2) ) - 0.001, grip/2];  // Subtract 0.001 from initial bar height otherwise the first while loop below wont solve for the top bar position.  Its either this or set the forearmangle increment to a finer angle, causing the code take longer to run ï¿½\_(?)_/ï¿½
 	
 	// Calc start and end angle of elbows from torso.  Used when the elbow tilt isnt locked to zero.
 	startflare = Math.asin( shoulder2hand / (upperarm*1.0 + forearm*1.0) );
@@ -269,13 +269,16 @@ function update(newValue)
 	var data = [plotbody, plotbarpath, plotbar, plotbench, plothead];
 
 	var layout = {
+	  title: 'Benchpress From Side',
 	  xaxis: {
 		range: [-50, 125],
-		autorange: false
+		autorange: false,
+		fixedrange: true
 	  },
 	  yaxis: {
 		range: [0, 150],
-		autorange: false
+		autorange: false,
+		fixedrange: true
 	  },
 	  showlegend: false
 	};
@@ -364,13 +367,16 @@ function update(newValue)
 	var data = [plotarms, plotbar, plothead, plotbench];
 
 	var layout = {
+	  title: 'Benchpress From Behind',
 	  xaxis: {
 		range: [-90, 90],
-		autorange: false
+		autorange: false,
+		fixedrange: true
 	  },
 	  yaxis: {
 		range: [0, 150],
-		autorange: false
+		autorange: false,
+		fixedrange: true
 	  },
 	  showlegend: false
 	};
@@ -479,13 +485,16 @@ function update(newValue)
 	var data = [plotarms, plotbar, plotbench, plothead];
 
 	var layout = {
+	  title: 'Benchpress From Above',
 	  xaxis: {
 		range: [-90, 90],
-		autorange: false
+		autorange: false,
+		fixedrange: true
 	  },
 	  yaxis: {
 		range: [-50, 125],
-		autorange: false
+		autorange: false,
+		fixedrange: true
 	  },
 	  showlegend: false
 	};
